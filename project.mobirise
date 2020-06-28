@@ -22,7 +22,7 @@
         "display7Size": 1.3,
         "display4Font": "Muli",
         "display4Size": 1,
-        "isRoundedButtons": true,
+        "isRoundedButtons": false,
         "isScrollToTopButton": false,
         "arrowColor": "#7567f8"
       },
@@ -682,7 +682,7 @@
               "color": "#1a0e9d"
             },
             ".mbr-section-title": {
-              "color": "#7567f8"
+              "color": "#1a0e9d"
             }
           },
           "_name": "content2",
@@ -707,63 +707,6 @@
           "_anchor": "partners",
           "_PHPplaceholders": [],
           "_JSplaceholders": []
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "& when not (@fullScreen)": {
-              "padding-top": "(@paddingTop * 1rem)",
-              "padding-bottom": "(@paddingBottom * 1rem)",
-              "min-height": "50vh"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)",
-              "& when (@overlay)": {
-                ".mbr-overlay": {
-                  "background": "@overlayColor",
-                  "opacity": "@overlayOpacity"
-                }
-              }
-            },
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            ".title-wrap, .title-block": {
-              "@media (max-width: 767px)": {
-                "padding-left": "0",
-                "padding-right": "0"
-              }
-            },
-            ".title-block": {
-              "h2": {
-                "letter-spacing": "3px"
-              }
-            },
-            ".btn-custom": {
-              "display": "inline-block",
-              ".btn": {
-                "margin-left": "1rem",
-                "margin-right": "1rem"
-              }
-            },
-            "@media (max-width: 767px)": {
-              ".title-block h2": {
-                "padding-left": "0.5rem",
-                "padding-right": "0.5rem"
-              },
-              ".btn-1": {
-                "margin": "50px 0 30px"
-              }
-            }
-          },
-          "_name": "header3",
-          "_customHTML": "<section class=\"header3\" group=\"Headers\" mbr-class=\"{'mbr-fullscreen': fullScreen}\" plugins=\"amp-main, amp-lightbox, amp-youtube\">\n    <!--  -->\n    <mbr-parameters>\n        <header>Size:</header>\n        <input type=\"checkbox\" title=\"Full Screen:\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width:\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top:\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom:\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n        <header>Show:</header>\n        <input type=\"checkbox\" title=\"Title:\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Subtitle:\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Buttons:\" name=\"showButtons\">\n        <select title=\"Align:\" name=\"alignTitle\" condition=\"showTitle || showSubtitle || showButtons\">\n            <option value=\"1\">Left</option>\n            <option value=\"2\" selected>Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n        <!--  -->\n        <header>Background:</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background image:\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1276.jpg\" selected>\n            <input type=\"color\" title=\"Background color:\" value=\"#9096a4\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay:\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay color:\" name=\"overlayColor\" value=\"#1a0e9d\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity:\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <!-- Overlay -->\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n    <!-- Container -->\n    <div mbr-class=\"{'container':!fullWidth, 'container-fluid': fullWidth}\">\n        <!-- Content -->\n        <div class=\"mbr-row\" mbr-class=\"{'align-left': alignTitle==1, 'align-center': alignTitle==2, 'align-right': alignTitle==3}\">\n            <!-- Titles -->\n            <div class=\"title-block mbr-col-sm-12 mbr-col-md-12 mbr-white\" mbr-class=\"{'align-left': alignTitle==1, 'align-center': alignTitle==2, 'align-right': alignTitle==3}\">\n                <h2 class=\"mbr-white mbr-fonts-style mbr-light\" mbr-theme-style=\"display-7\" mbr-class=\"{'mbr-pb-2': showTitle}\" mbr-if=\"showSubtitle\">START YOUR PROJECT TODAY!</h2>\n                <h1 class=\"mbr-white mbr-fonts-style mbr-pb-4 mbr-bold\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">HEllO! WE ARE AGENCY</h1>\n                <div mbr-buttons class=\"mbr-section-btn mbr-pt-1 btn-custom btn-1\" mbr-theme-style=\"display-4\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\" mbr-if=\"showButtons\">\n                    <a class=\"btn-primary btn\" href=\"http://mobirise.com\">PURCHASE NOW</a>\n                </div>\n                <div mbr-buttons class=\"mbr-section-btn mbr-pt-1 btn-custom\" mbr-theme-style=\"display-4\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\" mbr-if=\"showButtons\">\n                    <a class=\"btn-danger btn\" href=\"http://mobirise.com\">GET STARTED</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "s3canVIjX3",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "header3-b"
         },
         {
           "alias": false,
@@ -820,7 +763,7 @@
             }
           },
           "_name": "features11",
-          "_customHTML": "<section class=\"features11 video-with-lightbox\" group=\"Tabs &amp; Accordions\" plugins=\"amp-main, font-awesome, amp-lightbox, amp-youtube, amp-accordion\">\n    <!--  -->\n    <mbr-parameters>\n        <header>Size:</header>\n        <input type=\"range\" inline=\"\" title=\"Top:\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline=\"\" title=\"Bottom:\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <!--  -->\n        <header>Title:</header>\n        <input type=\"checkbox\" title=\"Title:\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Subtitle:\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Text:\" name=\"showText\">\n        <select title=\"Align:\" name=\"alignTitle\">\n            <option value=\"1\" selected=\"\">Left</option>\n            <option value=\"2\">Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n        <input type=\"checkbox\" title=\"Button:\" name=\"showButton\">\n        <!--  -->\n        <header>Background:</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color:\" value=\"#151135\" selected=\"\">\n            <input type=\"image\" title=\"Background Image:\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay:\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay\">\n        <input type=\"range\" inline=\"\" title=\"Opacity:\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay\">\n    </mbr-parameters>\n    <!--  -->\n    <!-- Overlay -->\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <!-- Container -->\n    <div class=\"container\">\n        <!-- Content -->\n        <div class=\"mbr-row\">\n            <!-- Left-side -->\n            <div class=\"mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-6\">\n                <div class=\"img\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/pp-logo-ss-ellipse-543x508.jpg\" alt=\"Planet Positive\" layout=\"responsive\" width=\"534.4488188976378\" height=\"500\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/pp-logo-ss-ellipse-543x508.jpg\" alt=\"Planet Positive\" title=\"\">\n                    </amp-img>\n                </div>\n            </div>\n            <!-- Right-side -->\n            <div class=\"mbr-col-md-12 mbr-col-sm-12 mbr-col-lg-6\">\n                <!-- Content-block -->\n                <div class=\"b-content mbr-py-5\">\n                    <!-- Title -->\n                    <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\">Hello!</h3>\n                    \n                  \n            \n                    <!-- Subtitle -->\n                    <h4 class=\"mbr-section-subtitle mbr-fonts-style mbr-pt-3 mbr-light\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\">Add your details below including the nature of your inquiry and a partner will reach out.&nbsp;<br></h4>\n                    <!-- Text -->\n                    <p class=\"mbr-text mbr-fonts-style mbr-pt-2 mbr-light\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>\n                    <!-- Button -->\n                    <div mbr-buttons=\"\" class=\"mbr-section-btn mbr-pt-5 btn-custom\" mbr-theme-style=\"display-4\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\" mbr-if=\"showButton\">\n                        <a class=\"btn-primary btn\" href=\"http://mobirise.com\">LEARN MORE</a>\n                        \n                         \n                    </div>\n                    \n                      [JS_CODE_0]\n               [JS_CODE_1]\n                </div>\n                \n               \n                \n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"features11 video-with-lightbox\" group=\"Tabs &amp; Accordions\" plugins=\"amp-main, font-awesome, amp-lightbox, amp-youtube, amp-accordion\">\n    <!--  -->\n    <mbr-parameters>\n        <header>Size:</header>\n        <input type=\"range\" inline=\"\" title=\"Top:\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"8\">\n        <input type=\"range\" inline=\"\" title=\"Bottom:\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <!--  -->\n        <header>Title:</header>\n        <input type=\"checkbox\" title=\"Title:\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Subtitle:\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Text:\" name=\"showText\">\n        <select title=\"Align:\" name=\"alignTitle\">\n            <option value=\"1\" selected=\"\">Left</option>\n            <option value=\"2\">Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n        <input type=\"checkbox\" title=\"Button:\" name=\"showButton\">\n        <!--  -->\n        <header>Background:</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color:\" value=\"#151135\" selected=\"\">\n            <input type=\"image\" title=\"Background Image:\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay:\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay\">\n        <input type=\"range\" inline=\"\" title=\"Opacity:\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay\">\n    </mbr-parameters>\n    <!--  -->\n    <!-- Overlay -->\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <!-- Container -->\n    <div class=\"container\">\n        <!-- Content -->\n        <div class=\"mbr-row\">\n            <!-- Left-side -->\n            <div class=\"mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-6\">\n                <div class=\"img\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/pp-logo-ss-ellipse-543x508.jpg\" alt=\"Planet Positive\" layout=\"responsive\" width=\"534.4488188976378\" height=\"500\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/pp-logo-ss-ellipse-543x508.jpg\" alt=\"Planet Positive\" title=\"\">\n                    </amp-img>\n                </div>\n            </div>\n            <!-- Right-side -->\n            <div class=\"mbr-col-md-12 mbr-col-sm-12 mbr-col-lg-6\">\n                <!-- Content-block -->\n                <div class=\"b-content mbr-py-5\">\n                    <!-- Title -->\n                    <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\">Hello!</h3>\n                    \n                  \n            \n                    <!-- Subtitle -->\n                    <h4 class=\"mbr-section-subtitle mbr-fonts-style mbr-pt-3 mbr-light\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\">Add your details and the nature of your inquiry so a partner can reach out.&nbsp;<br></h4>\n                    <!-- Text -->\n                    <p class=\"mbr-text mbr-fonts-style mbr-pt-2 mbr-light\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>\n                    <!-- Button -->\n                    <div mbr-buttons=\"\" class=\"mbr-section-btn mbr-pt-5 btn-custom\" mbr-theme-style=\"display-4\" mbr-class=\"{'align-left' : alignTitle == 1, 'align-center' : alignTitle == 2, 'align-right' : alignTitle == 3}\" mbr-if=\"showButton\">\n                        <a class=\"btn-primary btn\" href=\"http://mobirise.com\">LEARN MORE</a>\n                        \n                         \n                    </div>\n                    \n                      [JS_CODE_0]\n               [JS_CODE_1]\n                </div>\n                \n               \n                \n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "s3c6za4EeP",
           "_anchor": "contact-subscribe",
           "_PHPplaceholders": [],
